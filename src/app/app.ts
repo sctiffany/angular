@@ -19,7 +19,7 @@ export class App {
   get allImages(): string[] {
     return Array.from({ length: this.totalImages }, (_, i) => {
       const num = this.order === 'asc' ? i + 1 : this.totalImages - i;
-      return `/assets/photo(${num}).jpg`;
+      return `assets/photo(${num}).jpg`;
     });
   }
 
