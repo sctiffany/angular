@@ -1,0 +1,18 @@
+<main class="main">
+  <div class="app">
+    <h1>
+      Quel est l’impact des optimisations modernes sur les performances web ?
+    </h1>
+
+    <app-filter (orderChange)="onOrderChange($event)"></app-filter>
+
+    <div class="image-grid">
+      <app-image-square
+        *ngFor="let img of allImages"
+        [src]="img"
+      ></app-image-square>
+    </div>
+
+    <app-performance-stats></app-performance-stats>
+  </div>
+</main>
