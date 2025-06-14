@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { onTTFB, onFCP, onLCP } from 'web-vitals';
 
 @Component({
   selector: 'app-performance-stats',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <div class="performance">
-      Informations à propos de l'app - Angular
-      <div>TTFB : à ajouter</div>
-      <div>FCP : à ajouter</div>
-      <div>LCP : à ajouter</div>
-    </div>
-  `,
-  //styles: []
+  templateUrl: './performance-stats.html',
+  styleUrls: ['./performance-stats.css']
 })
-export class PerformanceStatsComponent {}
+export class PerformanceStatsComponent implements OnInit {
+  TTFB: string | null = null;
+  FCP: string | null = null;
+  LCP: string | null = null;
+
+  ngOnInit() {
+    onTTFB((metric) => this.TTFB = metric.value.toFixed(2) + ' ms');
+    onFCP((metric) => this.FCP = metric.value.toFixed(2) + ' ms');
+    onLCP((metric) => this.LCP = metric.value.toFixed(2) + ' ms');
+  }
+}

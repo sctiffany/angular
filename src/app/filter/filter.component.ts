@@ -5,15 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-filter',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <div>
-      <select id="sort" (change)="onChange($event)" class="selectFilter">
-        <option disabled defaultValue hidden>Filtres</option>
-        <option value="asc">1 - 800</option>
-        <option value="desc">800 - 1</option>
-      </select>
-    </div>
-  `,
+  templateUrl:'./filter.html',
   styleUrls: ['./filter.css']
 })
 export class FilterComponent {
