@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './image-square.html',
-  //styleUrls: ['./image-square.css']
+  styleUrls: ['./image-square.css']
 })
 export class ImageSquareComponent {
   @Input() src!: string;
